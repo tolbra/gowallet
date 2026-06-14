@@ -1,9 +1,11 @@
 services:
-  postgres:
+
+  postgres: #postgres is a service
     image: postgres:17
     
     container_name: wallet-postgres
 
+    #db settings
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -17,3 +19,4 @@ services:
   
 volumes:
   postgres_data:
+  
