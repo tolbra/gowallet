@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# gowallet
-Simulated Wallet Backend in Go
-=======
-# Go Wallet API
+# Go Wallet - Simulated Wallet Backend in Go
 
 ## Features
 
@@ -22,5 +18,4 @@ Simulated Wallet Backend in Go
 
 ## Project Goal
 
-Learn backend with Go while building a real project.
->>>>>>> c1b08ae (Add README, endpoints.md, .env.ecample)
+**Learn backend with Go while building a real project.**
