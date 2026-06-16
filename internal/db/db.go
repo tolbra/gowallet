@@ -12,4 +12,5 @@ func Connect(ctx context.Context, DatabaseURL string) (*pgxpool.Pool, error) {
 		return nil, err
 	}
 
+	return pool, nil
 }
