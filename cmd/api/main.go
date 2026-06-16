@@ -29,9 +29,8 @@ func main() {
 	if err := dbPool.Ping(ctx); err != nil {
 		log.Fatal("Failed to connect to PostgreSQL:", err)
 	}
-	log.Println("Successfully connected to PostgreSQL")
-
 	defer dbPool.Close()
+	log.Println("Successfully connected to PostgreSQL")
 
 	r := chi.NewRouter()
 

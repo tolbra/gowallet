@@ -4,7 +4,7 @@
 # Why not write directly in Go? 
 - Bad: databaseURL := "postgres://postgres:password@localhost:5432/wallet"
 - Good: databaseURL := os.Getenv("DATABASE_URL")
-- The Go code changes when database address, password, or environment. The os.Getenv reads and environment variable and return empty string when its absent
+- The Go code does not change when database address, password, or environment. The os.Getenv reads and environment variable and return empty string when its absent
 
 # Steps I took
 1. Created DATABASE_URL
@@ -24,3 +24,16 @@
     1. Cancellation: "Stop this operation" 
     2. Deadline: "This operation must finish before this time" 
     3. Timeout: "Stop after five seconds" and etc
+
+# Errors and Debugging 
+I had issues with running main and the issue was with port connection. I fixed it by changing host port from 5432 -> 5433. 
+The issue was that 5432 is default PostgreSQL port and it can conflict with another local PostgreSQL 
+
+
+# What code even does? 
+1. Load config 
+2. Check Database URL
+3. Create PostgreSQL connection pool
+4. Ping PostgreSQL
+5. Start HTTP Server
+6. /healthz still works
