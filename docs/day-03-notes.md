@@ -37,3 +37,27 @@ The issue was that 5432 is default PostgreSQL port and it can conflict with anot
 4. Ping PostgreSQL
 5. Start HTTP Server
 6. /healthz still works
+
+# Writing day 3th main.go from memory:
+- package declaration 
+- imports 
+- constants/config
+- main function 
+- route setup 
+- server startup
+- helper functions 
+
+# After each attempt run: 
+1. gofmt -w cmd/api/main.go
+2. go test ./...
+3. git diff --cmd/api/main.go
+
+# main.go structure 
+
+1. package 
+2. imports 
+3. main()
+4. config Database URL 
+5. context pgxpool 
+6. chi router
+7. error handling 
