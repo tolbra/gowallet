@@ -27,9 +27,8 @@ func main() {
 	dbPool, err := pgxpool.New(ctx, cfg.DatabaseURL) // creates postgresql connection pool using database URL. dbPool is
 	// reused for database queries instead of opening a new DB connection every time.
 	if err != nil { // if err is detected
-		log.Fatal("failed to create databasse pool", err) // log.Fatal & err
 	}
-
+	// commit
 	if err := dbPool.Ping(ctx); err != nil { // Tests database connection.
 		log.Fatal("Failed to connect to PostgreSQL:", err) // if err -> log.Fatal & err
 	}
