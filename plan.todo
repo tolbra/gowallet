@@ -1,12 +1,6 @@
-✔ Finish Day 3 @done(26-06-17 02:20)
-✘ Do math homework @cancelled(26-06-17 02:20)
-✘ Do math @cancelled(26-06-17 02:20)
 
+Steps 
 
-17.06.2026
-☐ Rewrite Day 3 from memory
-☐ Finish day 4
-☐ 3 Leetcode
-☐ Math Homework 
-☐ Gym 
-☐ 10 pages book
+☐ 1. package name / imports / main function skeleton
+☐ 2. config / database creation / context & database pool
+☐ 3. router / endpoint // errors

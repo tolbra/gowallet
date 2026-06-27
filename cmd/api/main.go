@@ -20,13 +20,14 @@ func main() {
 		log.Fatal("DATABASE_URL is not set") // if so log.Fatal
 	}
 
-	log.Println("Database_URL is set") // if ok, print database url is ok
 	// Creating database
-	ctx := context.Background() // creates base context: context is used by database/network operations to carry
+	log.Println("Database_URL is set") // if ok, print database url is ok
+	ctx := context.Background()        // creates base context: context is used by database/network operations to carry
 	// cancellation, timeout, or request-scoped values. Here it means "run normally with no timeout or cancellation"
 	dbPool, err := pgxpool.New(ctx, cfg.DatabaseURL) // creates postgresql connection pool using database URL. dbPool is
 	// reused for database queries instead of opening a new DB connection every time.
 	if err != nil { // if err is detected
+		log.Fatal("Failed to create connection pool", err)
 	}
 	// commit
 	if err := dbPool.Ping(ctx); err != nil { // Tests database connection.

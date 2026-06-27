@@ -61,3 +61,18 @@ The issue was that 5432 is default PostgreSQL port and it can conflict with anot
 5. context pgxpool 
 6. chi router
 7. error handling 
+
+# Why we are using these github packages when creating router, etc?  OR Dive into my imports 
+
+- context: gives database operations a way to be stopped or timed out  
+- encoding/json: converts Go data into JSON 
+- log: prints messages and stops the program when there is a fatal error 
+- net/http: runs the web server and handles HTTP requests and responses  
+- "github.com/go-chi/chi/v5" :  Matches URLs like /healthz to the code that handles them  
+- "github.com/go-chi/chi/v5/middleware" : Adds reusable behavior, such as logging every request  
+- "github.com/jackc/pgx/v5/pgxpool" : Creates and manages reusable PostgreSQL database connector  
+- "github.com/tolbra/gowallet/internal/config" : Loads the app's settings, such as the database URl and server port	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/tolbra/gowallet/internal/config"
+) 
